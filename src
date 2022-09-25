@@ -15,7 +15,7 @@ Eigen::Quaterniond euler2Quaternion(const double roll, const double pitch, const
     Eigen::AngleAxisd yawAngle(yaw, Eigen::Vector3d::UnitY());  
     Eigen::AngleAxisd pitchAngle(pitch, Eigen::Vector3d::UnitX());  
   
-    Eigen::Quaterniond q = rollAngle  yawAngle  pitchAngle;  
+    Eigen::Quaterniond q = rollAngle*yawAngle*pitchAngle;  
     cout << “Euler2Quaternion result is:” <<endl;  
     cout << ”x = ” << q.x() <<endl;  
     cout << ”y = ” << q.y() <<endl;  
